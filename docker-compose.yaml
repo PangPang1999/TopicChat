@@ -1,0 +1,19 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: packages/server/Dockerfile
+    environment:
+      PORT: 3000
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      NODE_ENV: production
+    ports:
+      - "3000:3000"
+  client:
+    build:
+      context: .
+      dockerfile: packages/client/Dockerfile
+    depends_on:
+      - server
+    ports:
+      - "80:80"

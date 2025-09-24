@@ -1,0 +1,10 @@
+.git
+node_modules
+packages/*/node_modules
+bun.lockb
+*.log
+.env
+.dist
+dist
+coverage
+.tmp
