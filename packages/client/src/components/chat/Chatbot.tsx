@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import axios from 'axios';
+import { v4 as uuid } from 'uuid';
 import TypingIndicator from './TypingIndicator';
 import ChatMessages from './ChatMessages';
 import type { Message } from './ChatMessages';
@@ -21,7 +22,7 @@ const ChatBot = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [isBotTyping, setIsBotTyping] = useState(false);
   const [error, setError] = useState('');
-  const conversationId = useRef(crypto.randomUUID());
+  const conversationId = useRef(uuid());
 
   const onSubmit = async ({ prompt }: ChatFormData) => {
     try {
