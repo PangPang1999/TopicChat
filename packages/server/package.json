@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "start": "bun run index.ts",
+    "dev": "bun run --watch index.ts"
+  },
   "name": "server",
   "module": "index.ts",
   "type": "module",
